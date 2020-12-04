@@ -27,6 +27,10 @@ pipeline {
     }
 
     post {
+        always  {
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+        }
+
         cleanup {
             cleanWs()
         }
