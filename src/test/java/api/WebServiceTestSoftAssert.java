@@ -1,6 +1,7 @@
 package api;
 
 import app.CommonApiDataProviders;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -32,6 +33,9 @@ public class WebServiceTestSoftAssert {
     @Test
     public void testEnvVars(Method testMethod) {
         System.out.println("Starting test: " + testMethod.getName());
+        String ENV_NAME = StringUtils.isEmpty(System.getProperty("envName"))
+                ? System.getenv("envName")
+                : System.getProperty("envName");
         System.out.println("envName = " + System.getenv("envName"));
     }
     @Test
