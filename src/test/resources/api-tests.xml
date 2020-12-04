@@ -3,7 +3,7 @@
 
 <suite name="All tests">
     <parameter name="baseUrl" value="https://ya.ru"/>
-    <test name="unitTests">
+    <test name="API Tests">
         <packages>
             <package name="api.*"/>
         </packages>
