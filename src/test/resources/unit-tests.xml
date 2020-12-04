@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="All tests">
+    <parameter name="baseUrl" value="https://ya.ru"/>
+    <test name="unitTests">
+        <packages>
+            <package name="unit.*"/>
+        </packages>
+    </test>
+<!--    <test name="apiTests">-->
+<!--        <packages>-->
+<!--            <package name="api.*"></package>-->
+<!--        </packages>-->
+<!--    </test>-->
+</suite>
