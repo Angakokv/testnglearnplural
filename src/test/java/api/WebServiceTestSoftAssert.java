@@ -36,8 +36,13 @@ public class WebServiceTestSoftAssert {
         String ENV_NAME = StringUtils.isEmpty(System.getProperty("envName"))
                 ? System.getenv("envName")
                 : System.getProperty("envName");
+        String SUBDOMAIN = StringUtils.isEmpty(System.getProperty("subdomain"))
+                ? System.getenv("subdomain")
+                : System.getProperty("subdomain");
         System.out.println("envName = " + ENV_NAME);
+        System.out.println("subdomain = " + SUBDOMAIN);
     }
+
     @Test
     public void statusIs200(Method testMethod) throws IOException {
         System.out.println("Starting test: " + testMethod.getName());
