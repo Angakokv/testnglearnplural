@@ -30,6 +30,11 @@ public class WebServiceTestSoftAssert {
     }
 
     @Test
+    public void testEnvVars(Method testMethod) {
+        System.out.println("Starting test: " + testMethod.getName());
+        System.out.println("envName = " + System.getenv("envName"));
+    }
+    @Test
     public void statusIs200(Method testMethod) throws IOException {
         System.out.println("Starting test: " + testMethod.getName());
         response = client.execute(new HttpGet("https://api.github.com"));
