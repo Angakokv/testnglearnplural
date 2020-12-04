@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'maven:3.6.3-jdk-14'}
+        docker {
+            image 'maven:3.6.3-jdk-14'
+            args '-v $HOME/.m2:/root/.m2'
+        }
     }
 
     stages {
@@ -15,6 +18,7 @@ pipeline {
     post {
         cleanup {
             cleanWs()
+//             deleteDir()
         }
     }
 }
