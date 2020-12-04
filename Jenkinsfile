@@ -18,8 +18,8 @@ pipeline {
             agent {
                 docker {
                     image 'maven:3.6.3-jdk-14'
+                    reuseNode true
                 }
-                reuseNode true
             }
 
             steps {
