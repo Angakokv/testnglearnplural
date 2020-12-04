@@ -36,7 +36,7 @@ public class WebServiceTestSoftAssert {
         String ENV_NAME = StringUtils.isEmpty(System.getProperty("envName"))
                 ? System.getenv("envName")
                 : System.getProperty("envName");
-        System.out.println("envName = " + System.getenv("envName"));
+        System.out.println("envName = " + ENV_NAME);
     }
     @Test
     public void statusIs200(Method testMethod) throws IOException {
