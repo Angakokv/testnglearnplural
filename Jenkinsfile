@@ -14,13 +14,13 @@ pipeline {
     }
 
     stages {
-        agent {
-            docker {
-                image 'maven:3.6.3-jdk-14'
-            }
-        }
-
         stage('Test') {
+            agent {
+                docker {
+                    image 'maven:3.6.3-jdk-14'
+                }
+            }
+
             steps {
                 sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/${params.SUITE_XML} -DenvName=${params.ENVIRONMENT} -Dsubdomain=${params.DEV_SUBDOMAIN}"
 //                 stash includes: 'allure-results', name: 'allure-results'
